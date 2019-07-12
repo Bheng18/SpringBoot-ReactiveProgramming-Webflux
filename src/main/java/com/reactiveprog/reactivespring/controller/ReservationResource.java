@@ -29,7 +29,7 @@ public class ReservationResource {
         return reservationService.getReservation(id);
     }
 
-    @GetMapping(path = "", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @GetMapping(path = "https://springboot-webflux.herokuapp.com/", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public Flux<Reservation> getAllReservations(){
         //reservationService.getReservation(roomId);
         return reservationService.listAllReservations();
