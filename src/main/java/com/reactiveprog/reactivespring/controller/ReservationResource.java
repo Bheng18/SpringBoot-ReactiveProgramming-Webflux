@@ -14,8 +14,8 @@ import reactor.core.publisher.Mono;
 @CrossOrigin(origins = "*")
 public class ReservationResource {
 
-//    public static final String ROOM_V_1_RESERVATION = "/room/v1/reservation/";
-    public static final String ROOM_V_1_RESERVATION = "https://springboot-webflux.herokuapp.com";
+    public static final String ROOM_V_1_RESERVATION = "/room/v1/reservation/";
+//    public static final String ROOM_V_1_RESERVATION = "https://springboot-webflux.herokuapp.com/";
 
     private final ReservationService reservationService;
 
