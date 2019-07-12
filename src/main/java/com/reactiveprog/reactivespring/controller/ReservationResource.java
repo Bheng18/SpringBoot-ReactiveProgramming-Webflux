@@ -14,7 +14,8 @@ import reactor.core.publisher.Mono;
 @CrossOrigin(origins = "*")
 public class ReservationResource {
 
-    public static final String ROOM_V_1_RESERVATION = "/room/v1/reservation/";
+//    public static final String ROOM_V_1_RESERVATION = "/room/v1/reservation/";
+    public static final String ROOM_V_1_RESERVATION = "https://springboot-webflux.herokuapp.com/";
 
     private final ReservationService reservationService;
 
@@ -29,7 +30,7 @@ public class ReservationResource {
         return reservationService.getReservation(id);
     }
 
-    @GetMapping(path = "https://springboot-webflux.herokuapp.com/", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @GetMapping(path = "", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public Flux<Reservation> getAllReservations(){
         //reservationService.getReservation(roomId);
         return reservationService.listAllReservations();
