@@ -15,7 +15,6 @@ import reactor.core.publisher.Mono;
 public class ReservationResource {
 
     public static final String ROOM_V_1_RESERVATION = "/room/v1/reservation/";
-//    public static final String ROOM_V_1_RESERVATION = "https://springboot-webflux.herokuapp.com/";
 
     private final ReservationService reservationService;
 
@@ -32,12 +31,10 @@ public class ReservationResource {
 
     @GetMapping(path = "", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public Flux<Reservation> getAllReservations(){
-        //reservationService.getReservation(roomId);
         return reservationService.listAllReservations();
     }
 
-    @PostMapping(path = "", produces = MediaType.APPLICATION_JSON_UTF8_VALUE,
-                            consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @PostMapping(path = "", produces = MediaType.APPLICATION_JSON_UTF8_VALUE, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public Mono<Reservation> createReservation(@RequestBody Mono<Reservation> reservation){
         return reservationService.createReservation(reservation);
     }
