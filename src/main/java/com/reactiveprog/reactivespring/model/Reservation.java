@@ -11,6 +11,8 @@ public class Reservation {
 
     private Long roomNumber;
 
+    private String guestName;
+
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate checkIn;
 
@@ -24,8 +26,9 @@ public class Reservation {
     public Reservation() {
     }
 
-    public Reservation(Long roomNumber, LocalDate checkIn, LocalDate checkOut, Integer price) {
+    public Reservation(Long roomNumber, String guestName, LocalDate checkIn, LocalDate checkOut, Integer price) {
         this.roomNumber = roomNumber;
+        this.guestName = guestName;
         this.checkIn = checkIn;
         this.checkOut = checkOut;
         this.price = price;
@@ -37,6 +40,14 @@ public class Reservation {
 
     public void setRoomNumber(Long roomNumber) {
         this.roomNumber = roomNumber;
+    }
+
+    public String getGuestName() {
+        return guestName;
+    }
+
+    public void setGuestName(String guestName) {
+        this.guestName = guestName;
     }
 
     public LocalDate getCheckIn() {
